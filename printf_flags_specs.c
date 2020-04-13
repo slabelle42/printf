@@ -1,6 +1,6 @@
 #include "printf.h"
 
-static t_flags		*printf_initialize_flags(void)
+static t_flags		*printf_init_flags(void)
 {
 	t_flags			*flags;
 
@@ -14,7 +14,7 @@ static t_flags		*printf_initialize_flags(void)
 	return (flags);
 }
 
-static t_specifiers	*printf_initialize_specs(void)
+static t_specifiers	*printf_init_specs(void)
 {
 	t_specifiers	*specs;
 
