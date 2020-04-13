@@ -19,6 +19,7 @@ static t_specifiers	*printf_initialize_specs(void)
 
 	if (!(specs = ft_memalloc(sizeof(t_specifiers))))
 		return (NULL);
+	specs->i = 0;
 	specs->j = 0;
 	specs->width = 0;
 	specs->precision = 0;
