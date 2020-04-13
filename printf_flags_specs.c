@@ -23,5 +23,6 @@ static t_specifiers	*printf_initialize_specs(void)
 	specs->j = 0;
 	specs->width = 0;
 	specs->precision = 0;
+	specs->letter = ' ';
 	return (specs);
 }
