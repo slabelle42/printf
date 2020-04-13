@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "printf.h"
 
 static int			printf_parse(const char *format, va_list *ap,
 					t_flags *flags, t_specifiers *specs)
