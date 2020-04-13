@@ -18,7 +18,18 @@ static int			printf_parse(const char *format, va_list *ap,
 	int				printed;
 
 	printed = 0;
-	
+	specs->j = specs->i;
+	while (format[++(specs->j)])
+		if (!(ft_strchr(".-0123456789*#+ ", format[specs->j])))
+			break ;
+	while (!(ft_strchr(".123456789*", format[++(specs->i)]))
+		&& specs->i < specs->j)
+		if (format[specs->j] == '-')
+			flags->minus = 1;
+		else if (format[specs->j] == '0')
+			flags->zero = 1;
+	while (format[++(specs->i)] != '.' && specs->i < specs->j)
+		
 	return (printed);
 }
 
