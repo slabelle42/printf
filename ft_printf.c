@@ -22,7 +22,17 @@ static int			printf_parse(const char *format, va_list *ap,
 	while (format[++(specs->j)])
 		if (!(ft_strchr(".-0123456789*#+ ", format[specs->j])))
 			break ;
+	while (++(specs->i) < specs->j
+		&& !(ft_strchr(".123456789*", format[specs->i])))
+		if (format[specs->i] == '-')
+			flags->minus = 1;
+		else if (format[specs->i] == '0' && flags->minus == 0)
+			flags->zero = 1;
+	if (++(specs->i) < specs->j && ft_strchr("123456789*", format[specs->i]))
+		specs->width = printf_width(format, specs);
 	
+	if (format[specs->i] == '.')
+		flags->dot = 1;
 	return (printed);
 }
 
