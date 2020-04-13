@@ -6,7 +6,7 @@
 /*   By: slabelle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/05 16:28:56 by slabelle          #+#    #+#             */
-/*   Updated: 2020/04/05 17:44:22 by slabelle         ###   ########.fr       */
+/*   Updated: 2020/04/13 21:46:11 by slabelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ typedef struct		s_specifiers
 	int				width;
 	int				precision;
 	char			letter;
-}					t_whole_specifier;
+}					t_specifiers;
 
 int					ft_printf(const char *format, ...);
 

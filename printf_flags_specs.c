@@ -6,11 +6,11 @@
 /*   By: slabelle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 21:35:00 by slabelle          #+#    #+#             */
-/*   Updated: 2020/04/13 21:35:22 by slabelle         ###   ########.fr       */
+/*   Updated: 2020/04/13 21:47:08 by slabelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 static t_flags		*printf_init_flags(void)
 {
