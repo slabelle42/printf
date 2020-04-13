@@ -8,7 +8,8 @@ static t_flags		*printf_initialize_flags(void)
 		return (NULL);
 	flags->minus = 0;
 	flags->zero = 0;
-	flags->aster = 0;
+	flags->aster_width = 0;
+	flags->aster_precis = 0;
 	flags->dot = 0;
 	return (flags);
 }
