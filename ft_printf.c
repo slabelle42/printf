@@ -29,10 +29,15 @@ static int			printf_parse(const char *format, va_list *ap,
 		else if (format[specs->i] == '0' && flags->minus == 0)
 			flags->zero = 1;
 	if (++(specs->i) < specs->j && ft_strchr("123456789*", format[specs->i]))
-		specs->width = printf_width(format, specs);
-	
+		if (specs->width = printf_width(format, specs) < 0)
+			exit(-1);
 	if (format[specs->i] == '.')
 		flags->dot = 1;
+	if (++(specs->i) < specs->j && ft_strchr("123456789*", format[specs->i]))
+		if (specs->precision = printf_precision(format, specs) < 0)
+			exit(-1);
+	if (ft_strchr("cspxXdiu%", format[specs->i]))
+		specs->letter = format[specs->i];
 	return (printed);
 }
 
@@ -50,8 +55,10 @@ static int			printf_input(const char *format, va_list *ap)
 			printed += ft_putchar_fd(format[i], 1);
 		else if (format[i] == '%' && format[i + 1])
 		{
-			flags = printf_initialize_flags();
-			specs = printf_initialize_specs();
+			if (!(flags = printf_init_flags()))
+				exit(-1);
+			if (!(specs = printf_init_specs()))
+				exit(-1);
 			specs->i = i;
 			printed += printf_parse(format, &ap, flags, specs);
 			i = specs->i;
