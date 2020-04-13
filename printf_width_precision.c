@@ -12,12 +12,27 @@
 
 #include "printf.h"
 
-int			printf_width(const char *format, t_specifiers *specs)
+int			printf_width_precision(const char *format, t_specifiers *specs)
 {
-	
-}
+	int		start;
+	int		end;
+	int		len;
+	char	*str_value;
+	int		int_value;
 
-int			printf_precision(const char *format, t_specifiers *specs)
-{
-	
+	if (format[(specs->i)++] == '*')
+		return ();
+	start = --(specs->i);
+	while (ft_isdigit(format[specs->i]))
+		(specs->i)++;
+	end = specs->i;
+	len = end - start;
+	if (!(str_value = malloc(sizeof(char) * (len + 1))))
+		return (-1);
+	str_value[len] = '\0';
+	while (end >= start)
+		str_value[len--] = format[end--];
+	int_value = ft_atoi(str_value);
+	free(str_value);
+	return (int_value);
 }
