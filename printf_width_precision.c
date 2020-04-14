@@ -21,7 +21,7 @@ int			printf_width_precision(const char *format, t_specifiers *specs)
 	int		int_value;
 
 	if (format[(specs->i)++] == '*')
-		return ();
+		return (0);
 	start = --(specs->i);
 	while (ft_isdigit(format[specs->i]))
 		(specs->i)++;
