@@ -31,12 +31,12 @@ static int			printf_parse(const char *format, va_list *ap,
 		if (!(ft_strchr(".-0123456789*#+ ", format[specs->j])))
 			break ;
 	printf_flags(format, flags, specs);
-	if (specs->width = printf_width_precision(format, specs) < 0)
+	if ((specs->width = printf_width_precision(format, specs)) < 0)
 		exit(-1);
 	if (flags->dot == 1)
 	{
 		(specs->i++);
-		if (specs->precision = printf_width_precision(format, specs) < 0)
+		if ((specs->precision = printf_width_precision(format, specs)) < 0)
 			exit(-1);
 	}
 	if (ft_strchr("cspxXdiu%", format[specs->i]))
