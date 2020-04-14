@@ -17,32 +17,32 @@
 # include <stdarg.h>
 # include <unistd.h>
 
-typedef struct		s_flags
+typedef struct	s_flags
 {
-	int				minus;
-	int				zero;
-	int				dot;
-}					t_flags;
+	int			minus;
+	int			zero;
+	int			dot;
+}				t_flags;
 
-typedef struct		s_specifiers
+typedef struct	s_specifiers
 {
-	int				i;
-	int				j;
-	int				width;
-	int				precision;
-	char			type;
-}					t_specifiers;
+	int			i;
+	int			j;
+	int			width;
+	int			precision;
+	char		type;
+}				t_specifiers;
 
-int					ft_printf(const char *format, ...);
+int				ft_printf(const char *format, ...);
 
-int					printf_unsigned_char(char char_ap, t_flags *flags,
-						t_specifiers *specs);
+int				printf_unsigned_char(char char_ap, t_flags *flags,
+					t_specifiers *specs);
 
-void				printf_flags(const char *format, t_flags *flags,
-						t_specifiers *specs);
-static t_flags		*printf_init_flags(void);
-static t_specifiers	*printf_init_specs(void);
-int					printf_width_precision(const char *format,
-						t_specifiers *specs);
+void			printf_flags(const char *format, t_flags *flags,
+					t_specifiers *specs);
+t_flags			*printf_init_flags(void);
+t_specifiers	*printf_init_specs(void);
+int				printf_width_precision(const char *format,
+					t_specifiers *specs);
 
 #endif
