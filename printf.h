@@ -40,7 +40,7 @@ void			printf_flags(const char *format, t_flags *flags,
 t_flags			*printf_init_flags(void);
 t_specifiers	*printf_init_specs(void);
 int				printf_width_precision(const char *format, va_list *ap,
-					t_flags *flags, t_specifiers *specs)
+					t_flags *flags, t_specifiers *specs);
 
 int				printf_unsigned_char(char char_ap, t_flags *flags,
 					t_specifiers *specs);
