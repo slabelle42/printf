@@ -24,6 +24,28 @@ static t_flags		*printf_init_flags(void)
 	return (flags);
 }
 
+void				printf_flags(const char *format, t_flags *flags,
+					t_specifiers *specs)
+{
+	int				k;
+
+	while (++(specs->i) < specs->j
+		&& !(ft_strchr(".123456789*", format[specs->i])))
+		if (format[specs->i] == '-')
+			flags->minus = 1;
+		else if (format[specs->i] == '0')
+			flags->zero = 1;
+	if (specs->i < specs->j)
+	{
+		k = specs->i - 1;
+		while (++k < specs->j)
+			if (format[k] == '.')
+				flags->dot = 1;
+	}
+	if (flags->minus == 1)
+		flags->zero = 0;
+}
+
 static t_specifiers	*printf_init_specs(void)
 {
 	t_specifiers	*specs;
