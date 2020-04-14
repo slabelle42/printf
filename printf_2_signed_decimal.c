@@ -25,7 +25,7 @@ static int	printf_display2_sd(int int_ap, t_specifiers *specs, char *str_ap,
 		printed += printf_display_width_precision(specs->precision - 1,
 			ap_len - 1, 1);
 	k = -1;
-	while (str_ap[++k], && k < ap_len)
+	while (str_ap[++k] && k < ap_len)
 		printed += ft_putchar_fd(str_ap[k], 1);
 	return (printed);
 }
