@@ -19,13 +19,8 @@ int		printf_unsigned_char(char char_ap, t_flags *flags, t_specifiers *specs)
 	printed = 0;
 	if (flags->minus == 1)
 		printed += ft_putchar_fd(char_ap, 1);
-	while ((specs->width)-- > flags->minus)
-	{
-		if (flags->zero)
-			printed += ft_putchar_fd('0', 1);
-		else
-			printed += ft_putchar_fd(' ', 1);
-	}
+	while ((specs->width)-- > 1)
+		printed += ft_putchar_fd(' ', 1);
 	if (flags->minus == 0)
 		printed += ft_putchar_fd(char_ap, 1);
 	return (printed);
