@@ -12,28 +12,39 @@
 
 #include "printf.h"
 
-int			printf_width_precision(const char *format, t_flags,
-			t_specifiers *specs)
+static int	printf_asterisk(int field, t_flags *flags)
+{
+	if (field < 0)
+	{
+		flags->minus = 1;
+		flags->zero = 0;
+		field = -field;
+	}
+	return (field);
+}
+
+int			printf_width_precision(const char *format, va_list *ap,
+			t_flags *flags, t_specifiers *specs)
 {
 	int		start;
 	int		end;
 	int		len;
-	char	*str_value;
-	int		int_value;
+	char	*str_field;
+	int		int_field;
 
 	if (format[(specs->i)++] == '*')
-		return (-2);
+		return (printf_asterisk(va_arg(*ap, int), flags));
 	start = --(specs->i);
 	while (ft_isdigit(format[specs->i]))
 		(specs->i)++;
 	end = specs->i;
 	len = end - start;
-	if (!(str_value = malloc(sizeof(char) * (len + 1))))
+	if (!(str_field = malloc(sizeof(char) * (len + 1))))
 		return (-1);
-	str_value[len] = '\0';
+	str_field[len] = '\0';
 	while (end >= start)
-		str_value[len--] = format[end--];
-	int_value = ft_atoi(str_value);
-	free(str_value);
-	return (int_value);
+		str_field[len--] = format[end--];
+	int_field = ft_atoi(str_field);
+	free(str_field);
+	return (int_field);
 }
