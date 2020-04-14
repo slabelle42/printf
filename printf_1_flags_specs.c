@@ -55,7 +55,7 @@ t_specifiers		*printf_init_specs(void)
 	specs->i = 0;
 	specs->j = 0;
 	specs->width = 0;
-	specs->precision = 0;
+	specs->precision = -1;
 	specs->type = ' ';
 	return (specs);
 }
