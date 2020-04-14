@@ -19,7 +19,8 @@ static int			printf_type(va_list *ap, t_flags *flags,
 	
 	printed = 0;
 	if (specs->type == 'c')
-		printed = printf_unsigned_char(va_arg(ap , unsigned int), flags, specs);
+		printed = printf_unsigned_char(va_arg(*ap , unsigned int),
+			flags, specs);
 	return (printed);
 }
 
