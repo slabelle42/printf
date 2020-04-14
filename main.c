@@ -11,7 +11,7 @@ int		main(void)
 	int		print_a;
 	int		print_b;
 	
-/*
+
 	printf("\n[   SIGNED DECIMAL _d   ]\n\n");
 	
 	print_a =    printf("printf    + - : %d %d\n", 123, -456);
@@ -56,16 +56,6 @@ int		main(void)
 	
 	print_a =    printf("printf     -5 : %-5d %-5d\n", 400, -400);
 	print_b = ft_printf("ft_printf     : %-5d %-5d\n", 400, -400);
-	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
-	printf("\n");
-
-	print_a =    printf("printf     sp : % d % d\n", 400, -400);
-	print_b = ft_printf("ft_printf     : % d % d\n", 400, -400);
-	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
-	printf("\n");
-
-	print_a =    printf("printf      + : %+d %+d\n", 400, -400);
-	print_b = ft_printf("ft_printf     : %+d %+d\n", 400, -400);
 	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
 	printf("\n");
 
@@ -138,27 +128,37 @@ int		main(void)
 	print_b = ft_printf("ft_printf     : %0*.*d|\n", 1, 0, 0);
 	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
 	printf("\n");
+
+//	print_a =    printf("BONUS printf     sp : % d % d\n", 400, -400);
+//	print_b = ft_printf("      ft_printf     : % d % d\n", 400, -400);
+//	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
+//	printf("\n");
+
+//	print_a =    printf("BONUS printf      + : %+d %+d\n", 400, -400);
+//	print_b = ft_printf("      ft_printf     : %+d %+d\n", 400, -400);
+//	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
+//	printf("\n");
+
+//	print_a =    printf("BONUS printf      + : %+4d|\n", 10);
+//	print_b = ft_printf("      ft_printf     : %+4d|\n", 10);
+//	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
+//	printf("\n");
 	
-	print_a =    printf("printf      + : %+4d|\n", 10);
-	print_b = ft_printf("ft_printf     : %+4d|\n", 10);
-	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
-	printf("\n");
+//	print_a =    printf("BONUS printf     -+ : %-+4d|\n", 10);
+//	print_b = ft_printf("      ft_printf     : %-+4d|\n", 10);
+//	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
+//	printf("\n");
 	
-	print_a =    printf("printf     -+ : %-+4d|\n", 10);
-	print_b = ft_printf("ft_printf     : %-+4d|\n", 10);
-	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
-	printf("\n");
+//	print_a =    printf("BONUS printf    ' ' : % 4d|\n", 10);
+//	print_b = ft_printf("      ft_printf     : % 4d|\n", 10);
+//	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
+//	printf("\n");
 	
-	print_a =    printf("printf    ' ' : % 4d|\n", 10);
-	print_b = ft_printf("ft_printf     : % 4d|\n", 10);
-	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
-	printf("\n");
-	
-	print_a =    printf("printf   -' ' : %- 4d|\n", 10);
-	print_b = ft_printf("ft_printf     : %- 4d|\n", 10);
-	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
-	printf("\n");
-*/
+//	print_a =    printf("BONUS printf   -' ' : %- 4d|\n", 10);
+//	print_b = ft_printf("      ft_printf     : %- 4d|\n", 10);
+//	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
+//	printf("\n");
+
 
 	printf("\n[   UNSIGNED CHAR   ]\n\n");
 
