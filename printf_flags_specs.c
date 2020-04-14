@@ -36,6 +36,6 @@ static t_specifiers	*printf_init_specs(void)
 	specs->j = 0;
 	specs->width = 0;
 	specs->precision = 0;
-	specs->letter = ' ';
+	specs->type = ' ';
 	return (specs);
 }
