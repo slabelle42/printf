@@ -12,9 +12,11 @@
 
 #include "printf.h"
 
-static int	printf_display2_sd(int int_ap, t_specifiers *specs, char *str_ap)
+static int	printf_display2_sd(int int_ap, t_specifiers *specs, char *str_ap,
+			int ap_len)
 {
 	int		printed;
+	int		k;
 
 	printed = 0;
 	if (int_ap < 0 && int_ap != -2147483648 && specs->precision >= 0)
@@ -37,7 +39,7 @@ static int	printf_display_sd(int int_ap, t_specifiers *specs, char *str_ap)
 	ap_len = (int)ft_strlen(str_ap);
 	printed = 0;
 	if (flags->minus == 1)
-		printed += printf_display2_sd(int_ap, specs, str_ap);
+		printed += printf_display2_sd(int_ap, specs, str_ap, ap_len);
 	if (specs->precision >= 0 && specs->precision < ap_len)
 		specs->precision = ap_len;
 	if (specs->precision >= 0)
@@ -49,7 +51,7 @@ static int	printf_display_sd(int int_ap, t_specifiers *specs, char *str_ap)
 		printed += printf_display_width_precision(specs->width, ap_len,
 			specs->precision);
 	if (flags->minus == 0)
-		printed += printf_display2_sd(int_ap, specs, str_ap);
+		printed += printf_display2_sd(int_ap, specs, str_ap, ap_len);
 	return (printed);
 }
 
