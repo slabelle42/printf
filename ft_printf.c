@@ -15,7 +15,12 @@
 static int			printf_type(va_list *ap, t_flags *flags,
 					t_specifiers *specs)
 {
-	;
+	int				printed;
+	
+	printed = 0;
+	if (specs->type == 'c')
+		printed = printf_unsigned_char(va_arg(ap , unsigned int), flags, specs);
+	return (printed);
 }
 
 static int			printf_parse(const char *format, va_list *ap,
