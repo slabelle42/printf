@@ -19,10 +19,12 @@ static int			printf_type(va_list *ap, t_flags *flags,
 	
 	printed = 0;
 	if (specs->type == 'c')
-		printed = printf_unsigned_char(va_arg(*ap , unsigned int),
-			flags, specs);
+		printed = printf_unsigned_char(va_arg(*ap , unsigned int), flags,
+			specs);
 	if (specs->type == 's')
 		printed = printf_string(va_arg(*ap , char *), flags, specs);
+	if (specs->type == 'd' || specs->type == 'i')
+		printed = printf_signed_decimal(va_arg(*ap , int), flags, specs);
 	return (printed);
 }
 
