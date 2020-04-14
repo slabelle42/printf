@@ -21,8 +21,6 @@ static t_flags		*printf_init_flags(void)
 	flags->minus = 0;
 	flags->zero = 0;
 	flags->dot = 0;
-	flags->aster_width = 0;
-	flags->aster_precis = 0;
 	return (flags);
 }
 
