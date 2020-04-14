@@ -30,11 +30,11 @@ static int	printf_display2_sd(int int_ap, t_specifiers *specs, char *str_ap,
 	return (printed);
 }
 
-static int	printf_display_sd(int int_ap, t_specifiers *specs, char *str_ap)
+static int	printf_display_sd(int int_ap, t_flags *flags, t_specifiers *specs,
+			char *str_ap)
 {
 	int		ap_len;
 	int		printed;
-	int		k;
 
 	ap_len = (int)ft_strlen(str_ap);
 	printed = 0;
@@ -74,7 +74,7 @@ int			printf_signed_decimal(int int_ap, t_flags *flags, t_specifiers *specs)
 		printed++;
 	}
 	str_ap = ft_itoa(int_ap);
-	printed += printf_display_sd(int_ap, specs, str_ap);
+	printed += printf_display_sd(int_ap, flags, specs, str_ap);
 	free(str_ap);
 	return (printed);
 }
