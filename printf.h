@@ -22,8 +22,6 @@ typedef struct		s_flags
 	int				minus;
 	int				zero;
 	int				dot;
-	int				aster_width;
-	int				aster_precis;
 }					t_flags;
 
 typedef struct		s_specifiers
@@ -32,7 +30,7 @@ typedef struct		s_specifiers
 	int				j;
 	int				width;
 	int				precision;
-	char			letter;
+	char			type;
 }					t_specifiers;
 
 int					ft_printf(const char *format, ...);
