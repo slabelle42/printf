@@ -12,6 +12,7 @@ SRC =	ft_printf.c
 SRC +=	printf_1_flags_specs.c
 SRC +=	printf_1_width_precision.c
 SRC +=	printf_2_unsigned_char.c
+SRC +=	printf_2_string.c
 
 # [ obj ]
 OBJ_DIR = obj/
