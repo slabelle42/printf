@@ -48,3 +48,18 @@ int			printf_width_precision(const char *format, va_list *ap,
 	free(str_field);
 	return (int_field);
 }
+
+int			printf_display_width_precision(int field, int minus, int zero)
+{
+	int		printed;
+
+	printed = 0;
+	while (field-- > minus)
+	{
+		if (zero)
+			printed += ft_putchar_fd('0', 1);
+		else
+			printed += ft_putchar_fd(' ', 1);
+	}
+	return (printed);
+}
