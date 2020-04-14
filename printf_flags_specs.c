@@ -12,7 +12,7 @@
 
 #include "printf.h"
 
-static t_flags		*printf_init_flags(void)
+t_flags				*printf_init_flags(void)
 {
 	t_flags			*flags;
 
@@ -46,7 +46,7 @@ void				printf_flags(const char *format, t_flags *flags,
 		flags->zero = 0;
 }
 
-static t_specifiers	*printf_init_specs(void)
+t_specifiers		*printf_init_specs(void)
 {
 	t_specifiers	*specs;
 
