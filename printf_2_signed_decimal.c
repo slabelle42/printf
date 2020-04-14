@@ -53,7 +53,7 @@ static int	printf_display_sd(int int_ap, t_specifiers *specs, char *str_ap)
 	return (printed);
 }
 
-int			printf_signed_decimal(int *int_ap, t_flags *flags, t_specifiers *specs)
+int			printf_signed_decimal(int int_ap, t_flags *flags, t_specifiers *specs)
 {
 	int		printed;
 	char	*str_ap;
