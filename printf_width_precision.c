@@ -12,7 +12,8 @@
 
 #include "printf.h"
 
-int			printf_width_precision(const char *format, t_specifiers *specs)
+int			printf_width_precision(const char *format, t_flags,
+			t_specifiers *specs)
 {
 	int		start;
 	int		end;
@@ -21,7 +22,7 @@ int			printf_width_precision(const char *format, t_specifiers *specs)
 	int		int_value;
 
 	if (format[(specs->i)++] == '*')
-		return (0);
+		return (-2);
 	start = --(specs->i);
 	while (ft_isdigit(format[specs->i]))
 		(specs->i)++;
