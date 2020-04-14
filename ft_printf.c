@@ -32,7 +32,7 @@ static int			printf_parse(const char *format, va_list *ap,
 			exit(-1);
 	}
 	if (ft_strchr("cspxXdiu%", format[specs->i]))
-		specs->type == format[specs->i];
+		specs->type = format[specs->i];
 	printed = 
 	return (printed);
 }
