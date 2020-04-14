@@ -10,6 +10,7 @@ MAIN = main.c
 # [ src ]
 SRC =	ft_printf.c
 SRC +=	printf_flags_specs.c
+SRC +=	printf_unsigned_char.c
 SRC +=	printf_width_precision.c
 
 # [ obj ]
