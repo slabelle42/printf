@@ -43,7 +43,7 @@ t_specifiers	*printf_init_specs(void);
 int				printf_width_precision(const char *format, va_list *ap,
 					t_flags *flags, t_specifiers *specs);
 
-int				printf_signed_decimal(int *int_ap, t_flags *flags,
+int				printf_signed_decimal(int int_ap, t_flags *flags,
 					t_specifiers *specs);
 int				printf_unsigned_char(char char_ap, t_flags *flags,
 					t_specifiers *specs);
