@@ -15,12 +15,11 @@
 int			printf_signed_decimal(int *int_ap, t_flags *flags, t_specifiers *specs)
 {
 	int		printed;
-	int		k;
 	char	*str_ap;
 
-	printed = 0;
 	if (int_ap == 0 && specs->precision == 0)
 		return (printf_display_width_precision(specs->width, 0, 0));
+	printed = 0;
 	if (int_ap < 0 && (specs->precision >= 0 || flags->zero == 1)
 		&& int_ap != -2147483648)
 	{
