@@ -35,6 +35,7 @@ typedef struct	s_specifiers
 
 int				ft_printf(const char *format, ...);
 
+int				printf_display_width_precision(int field, int minus, int zero);
 void			printf_flags(const char *format, t_flags *flags,
 					t_specifiers *specs);
 t_flags			*printf_init_flags(void);
