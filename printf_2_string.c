@@ -40,7 +40,7 @@ int			printf_string(char *str_ap, t_flags *flags,
 	ap_len = (int)ft_strlen(str_ap);
 	printed = 0;
 	if (!str_ap)
-		str_ap = "(null)";
+		str_ap = printf_null_str();
 	if (specs->precision >= 0 && specs->precision > ap_len)
 		specs->precision = ap_len;
 	if (flags->minus == 1)
