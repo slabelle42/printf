@@ -38,6 +38,8 @@ int					ft_printf(const char *format, ...);
 int					printf_unsigned_char(char char_ap, t_flags *flags,
 						t_specifiers *specs);
 
+void				printf_flags(const char *format, t_flags *flags,
+						t_specifiers *specs);
 static t_flags		*printf_init_flags(void);
 static t_specifiers	*printf_init_specs(void);
 int					printf_width_precision(const char *format,
