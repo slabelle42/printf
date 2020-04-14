@@ -12,12 +12,15 @@
 
 #include "printf.h"
 
+static int			printf_type(va_list *ap, t_flags *flags,
+					t_specifiers *specs)
+{
+	;
+}
+
 static int			printf_parse(const char *format, va_list *ap,
 					t_flags *flags, t_specifiers *specs)
 {
-	int				printed;
-
-	printed = 0;
 	specs->j = specs->i;
 	while (format[++(specs->j)])
 		if (!(ft_strchr(".-0123456789*#+ ", format[specs->j])))
@@ -33,8 +36,7 @@ static int			printf_parse(const char *format, va_list *ap,
 	}
 	if (ft_strchr("cspxXdiu%", format[specs->i]))
 		specs->type = format[specs->i];
-	printed = 
-	return (printed);
+	return (printf_type(ap, flags, specs));
 }
 
 static int			printf_input(const char *format, va_list *ap)
