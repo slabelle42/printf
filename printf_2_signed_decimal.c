@@ -12,6 +12,47 @@
 
 #include "printf.h"
 
+static int	printf_display2_sd(int int_ap, t_specifiers *specs, char *str_ap)
+{
+	int		printed;
+
+	printed = 0;
+	if (int_ap < 0 && int_ap != -2147483648 && specs->precision >= 0)
+		ft_putchar_fd('-', 1);
+	if (specs->precision >= 0)
+		printed += printf_display_width_precision(specs->precision - 1,
+			ap_len - 1, 1);
+	k = -1;
+	while (str_ap[++k], && k < ap_len)
+		printed += ft_putchar_fd(str_ap[k], 1);
+	return (printed);
+}
+
+static int	printf_display_sd(int int_ap, t_specifiers *specs, char *str_ap)
+{
+	int		ap_len;
+	int		printed;
+	int		k;
+
+	ap_len = (int)ft_strlen(str_ap);
+	printed = 0;
+	if (flags->minus == 1)
+		printed += printf_display2_sd(int_ap, specs, str_ap);
+	if (specs->precision >= 0 && specs->precision < ap_len)
+		specs->precision = ap_len;
+	if (specs->precision >= 0)
+	{
+		specs->width -= specs->precision;
+		printed += printf_display_width_precision(specs->width, 0, 0);
+	}
+	else
+		printed += printf_display_width_precision(specs->width, ap_len,
+			specs->precision);
+	if (flags->minus == 0)
+		printed += printf_display2_sd(int_ap, specs, str_ap);
+	return (printed);
+}
+
 int			printf_signed_decimal(int *int_ap, t_flags *flags, t_specifiers *specs)
 {
 	int		printed;
@@ -31,7 +72,7 @@ int			printf_signed_decimal(int *int_ap, t_flags *flags, t_specifiers *specs)
 		printed++;
 	}
 	str_ap = ft_itoa(int_ap);
-	printed += printf_display_sd(int_ap, flags, str_ap);
+	printed += printf_display_sd(int_ap, specs, str_ap);
 	free(str_ap);
 	return (printed);
 }
