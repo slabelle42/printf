@@ -65,7 +65,7 @@ int			printf_unsigned_decimal(unsigned int uint_ap, t_flags *flags,
 	if (uint_ap == 0 && specs->precision == 0)
 		return (printf_display_width_precision(specs->width, 0, 0));
 	printed = 0;
-	str_ap = ft_itoa(uint_ap);
+	str_ap = ft_itoa_ull(uint_ap);
 	printed += printf_display_ud(flags, specs, str_ap);
 	free(str_ap);
 	return (printed);
