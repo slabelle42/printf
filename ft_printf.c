@@ -37,13 +37,13 @@ static int			printf_parse(const char *format, va_list *ap,
 			break ;
 	printf_flags(format, flags, specs);
 	if ((specs->width = printf_width_precision(format, ap,
-		flags, specs)) < 0)
+		flags, specs)) == -2)
 		exit(-1);
-	if (flags->dot == 1)
+	if (format[specs->i] == '.')
 	{
-		(specs->i++);
+		flags->dot = 1;
 		if ((specs->precision = printf_width_precision(format, ap,
-			flags, specs)) < 0)
+			flags, specs)) == -2)
 			exit(-1);
 	}
 	if (ft_strchr("cspxXdiu%", format[specs->i]))
