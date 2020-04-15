@@ -22,6 +22,9 @@ static int			printf_type(va_list *ap, t_flags *flags,
 		printed = printf_unsigned_char(va_arg(*ap, unsigned int), flags, specs);
 	else if (specs->type == 's')
 		printed = printf_string(va_arg(*ap, char *), flags, specs);
+	else if (specs->type == 'x' || specs->type == 'X')
+		printed = printf_unsigned_hexa(va_arg(*ap, unsigned long long),
+			flags, specs);
 	else if (specs->type == 'd' || specs->type == 'i')
 		printed = printf_signed_decimal(va_arg(*ap, int), flags, specs);
 	else if (specs->type == 'u')
