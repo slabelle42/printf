@@ -39,7 +39,7 @@ static int	printf_display_sd(t_flags *flags, t_specifiers *specs, int int_ap,
 	ap_len = (int)ft_strlen(str_ap);
 	printed = 0;
 	if (flags->minus == 1)
-		printed += printf_display2_sd(int_ap, specs, str_ap, ap_len);
+		printed += printf_display2_sd(specs, int_ap, str_ap, ap_len);
 	if (specs->precision >= 0 && specs->precision < ap_len)
 		specs->precision = ap_len;
 	if (specs->precision >= 0)
