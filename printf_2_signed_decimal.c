@@ -12,7 +12,7 @@
 
 #include "printf.h"
 
-static int	printf_display2_sd(int int_ap, t_specifiers *specs, char *str_ap,
+static int	printf_display2_sd(t_specifiers *specs, int int_ap, char *str_ap,
 			int ap_len)
 {
 	int		printed;
@@ -30,7 +30,7 @@ static int	printf_display2_sd(int int_ap, t_specifiers *specs, char *str_ap,
 	return (printed);
 }
 
-static int	printf_display_sd(int int_ap, t_flags *flags, t_specifiers *specs,
+static int	printf_display_sd(t_flags *flags, t_specifiers *specs, int int_ap,
 			char *str_ap)
 {
 	int		ap_len;
@@ -58,11 +58,13 @@ static int	printf_display_sd(int int_ap, t_flags *flags, t_specifiers *specs,
 int			printf_signed_decimal(int int_ap, t_flags *flags, t_specifiers *specs)
 {
 	int		printed;
+	int		int_cpy;
 	char	*str_ap;
 
 	if (int_ap == 0 && specs->precision == 0)
 		return (printf_display_width_precision(specs->width, 0, 0));
 	printed = 0;
+	int_cpy = int_ap;
 	if (int_ap < 0 && (specs->precision >= 0 || flags->zero == 1)
 		&& int_ap != -2147483648)
 	{
@@ -74,7 +76,7 @@ int			printf_signed_decimal(int int_ap, t_flags *flags, t_specifiers *specs)
 		printed++;
 	}
 	str_ap = ft_itoa(int_ap);
-	printed += printf_display_sd(int_ap, flags, specs, str_ap);
+	printed += printf_display_sd(flags, specs, int_cpy, str_ap);
 	free(str_ap);
 	return (printed);
 }
