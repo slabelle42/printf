@@ -51,7 +51,7 @@ static int	printf_display_sd(t_flags *flags, t_specifiers *specs, int int_ap,
 		printed += printf_display_width_precision(specs->width, ap_len,
 			specs->precision);
 	if (flags->minus == 0)
-		printed += printf_display2_sd(int_ap, specs, str_ap, ap_len);
+		printed += printf_display2_sd(specs, int_ap, str_ap, ap_len);
 	return (printed);
 }
 
