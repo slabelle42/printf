@@ -11,7 +11,7 @@ int		main(void)
 	int		print_a;
 	int		print_b;
 	
-/*
+
 	printf("\n[   SIGNED DECIMAL _d   ]\n\n");
 	
 	print_a =    printf("printf    + - : %d %d\n", 123, -456);
@@ -359,7 +359,7 @@ int		main(void)
 //	print_b = ft_printf("      ft_printf     : %+#024.s|\n", NULL);
 //	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
 //	printf("\n");
-*/
+
 
 	printf("\n[   UNSIGNED DECIMAL _u   ]\n\n");
 	
@@ -418,7 +418,7 @@ int		main(void)
 	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
 	printf("\n");
 
-/*
+
 	printf("\n[   UNSIGNED HEXA _x   ]\n\n");
 
 	print_a =    printf("printf      1 : %x\n", 1);
@@ -544,7 +544,7 @@ int		main(void)
 	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
 	printf("\n");
 
-
+/*
 	printf("\n[   UNSIGNED HEXA _p   ]\n\n");
 
 	char	*p_val1 = "abc";
@@ -608,15 +608,33 @@ int		main(void)
 	print_b = ft_printf("ft_printf     : %-*p|\n", 8, NULL);
 	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
 	printf("\n");
+*/
 
+	printf("\n[   PERCENT __   ]\n\n");
 
-	printf("\n[   NO FORMAT _   ]\n\n");
-	
 	print_a =    printf("printf    10_ : %%%%%%%%%%\n");
 	print_b = ft_printf("ft_printf     : %%%%%%%%%%\n");
 	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
 	printf("\n");
+	
+	print_a =    printf("printf     30 : %30%|\n");
+	print_b = ft_printf("ft_printf     : %30%|\n");
+	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
+	printf("\n");
 
+	print_a =    printf("printf    -30 : %-30%|\n");
+	print_b = ft_printf("ft_printf     : %-30%|\n");
+	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
+	printf("\n");
+
+	print_a =    printf("printf    030 : %030%|\n");
+	print_b = ft_printf("ft_printf     : %030%|\n");
+	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
+	printf("\n");
+
+/*
+	printf("\n[   NO FORMAT _   ]\n\n");
+	
 	print_a =    printf("printf     1_ : %\n");
 	print_b = ft_printf("ft_printf     : %\n");
 	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
@@ -634,21 +652,6 @@ int		main(void)
 
 	print_a =    printf("printf      k : %k|\n", 0);
 	print_b = ft_printf("ft_printf     : %k|\n", 0);
-	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
-	printf("\n");
-	
-	print_a =    printf("printf     30 : %30%|\n");
-	print_b = ft_printf("ft_printf     : %30%|\n");
-	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
-	printf("\n");
-
-	print_a =    printf("printf    -30 : %-30%|\n");
-	print_b = ft_printf("ft_printf     : %-30%|\n");
-	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
-	printf("\n");
-
-	print_a =    printf("printf    030 : %030%|\n");
-	print_b = ft_printf("ft_printf     : %030%|\n");
 	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
 	printf("\n");
 
