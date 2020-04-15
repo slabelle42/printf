@@ -52,5 +52,7 @@ int				printf_unsigned_char(char char_ap, t_flags *flags,
 					t_specifiers *specs);
 int				printf_unsigned_decimal(unsigned int uint_ap, t_flags *flags,
 					t_specifiers *specs);
+int				printf_unsigned_hexa(unsigned long long ull_ap, t_flags *flags,
+					t_specifiers *specs);
 
 #endif
