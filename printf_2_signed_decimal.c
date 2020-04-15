@@ -68,7 +68,7 @@ int			printf_signed_decimal(int int_ap, t_flags *flags, t_specifiers *specs)
 	if (int_ap < 0 && (specs->precision >= 0 || flags->zero == 1)
 		&& int_cpy != -2147483648)
 	{
-		if (specs->precision <= -1 && flags->zero == 1)
+		if (specs->precision < -1 && flags->zero == 1)
 			ft_putchar_fd('-', 1);
 		int_ap = -int_ap;
 		flags->zero = 1;
