@@ -19,11 +19,11 @@ static int	printf_display2_sd(t_specifiers *specs, int int_ap, char *str_ap,
 	int		k;
 
 	printed = 0;
-	if (int_ap < 0 && int_ap != -2147483648 && specs->precision >= 0)
+	if (specs->precision >= 0 && int_ap < 0 && int_ap != -2147483648)
 		ft_putchar_fd('-', 1);
 	if (specs->precision >= 0)
-		printed += printf_display_width_precision(specs->precision - 1,
-			ap_len - 1, 1);
+		printed += printf_display_width_precision((specs->precision - 1),
+			(ap_len - 1), 1);
 	k = -1;
 	while (str_ap[++k] && k < ap_len)
 		printed += ft_putchar_fd(str_ap[k], 1);
