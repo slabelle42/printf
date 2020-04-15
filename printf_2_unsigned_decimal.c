@@ -15,5 +15,6 @@
 int		printf_unsigned_decimal(unsigned int uint_ap, t_flags *flags,
 		t_specifiers *specs)
 {
-	;
+	uint_ap = (unsigned int)(uint_ap + 4294967295 + 1);
+	return (ft_printf("%d", uint_ap));
 }
