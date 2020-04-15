@@ -12,8 +12,7 @@
 
 #include "printf.h"
 
-static int	printf_display2_ud(t_specifiers *specs, unsigned int uint_ap,
-			char *str_ap, int ap_len)
+static int	printf_display2_ud(t_specifiers *specs, char *str_ap, int ap_len)
 {
 	int		printed;
 	int		k;
@@ -37,7 +36,7 @@ static int	printf_display_ud(t_flags *flags, t_specifiers *specs,
 	ap_len = (int)ft_strlen(str_ap);
 	printed = 0;
 	if (flags->minus == 1)
-		printed += printf_display2_ud(specs, uint_ap, str_ap, ap_len);
+		printed += printf_display2_ud(specs, str_ap, ap_len);
 	if (specs->precision >= 0 && specs->precision < ap_len)
 		specs->precision = ap_len;
 	if (specs->precision >= 0)
@@ -54,7 +53,7 @@ static int	printf_display_ud(t_flags *flags, t_specifiers *specs,
 				specs->precision);
 	}
 	if (flags->minus == 0)
-		printed += printf_display2_ud(specs, uint_ap, str_ap, ap_len);
+		printed += printf_display2_ud(specs, str_ap, ap_len);
 	return (printed);
 }
 
