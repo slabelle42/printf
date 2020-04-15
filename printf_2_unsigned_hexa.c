@@ -67,7 +67,7 @@ int			printf_unsigned_hexa(unsigned long long ull_ap, t_flags *flags,
 		return (printf_display_width_precision(specs->width, 0, 0));
 	printed = 0;
 	str_ap = ft_itoa_ull_base(ull_ap, 16);
-	if (width->type == 'X')
+	if (specs->type == 'X')
 	{
 		k = -1;
 		while (str_ap[++k])
