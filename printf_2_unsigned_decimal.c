@@ -12,7 +12,7 @@
 
 #include "printf.h"
 
-int		printf_unsigned_decimal(unsigned int ui_ap, t_flags *flags,
+int		printf_unsigned_decimal(unsigned int uint_ap, t_flags *flags,
 		t_specifiers *specs)
 {
 	;
