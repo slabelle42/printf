@@ -16,6 +16,7 @@ SRC +=	printf_2_signed_decimal.c
 SRC +=	printf_2_string.c
 SRC +=	printf_2_unsigned_char.c
 SRC +=	printf_2_unsigned_decimal.c
+SRC +=	printf_2_unsigned_hexa.c
 
 # [ obj ]
 OBJ_DIR = obj/
