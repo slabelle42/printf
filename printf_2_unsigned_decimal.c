@@ -70,7 +70,7 @@ int			printf_unsigned_decimal(unsigned int uint_ap, t_flags *flags,
 		return (printf_display_width_precision(specs->width, 0, 0));
 	printed = 0;
 	str_ap = ft_itoa(uint_cpy);
-	printed += printf_display_sd(flags, specs, uint_cpy, str_ap);
+	printed += printf_display_ud(flags, specs, uint_cpy, str_ap);
 	free(str_ap);
 	return (printed);
 }
