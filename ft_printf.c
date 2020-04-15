@@ -25,6 +25,9 @@ static int			printf_type(va_list *ap, t_flags *flags,
 		printed = printf_string(va_arg(*ap , char *), flags, specs);
 	else if (specs->type == 'd' || specs->type == 'i')
 		printed = printf_signed_decimal(va_arg(*ap , int), flags, specs);
+	else if (specs->type == 'u')
+		printed = printf_unsigned_decimal(va_arg(*ap , unsigned int), flags,
+			specs);
 	else if (specs->type == '%')
 		printed = printf_percent(flags, specs);
 	return (printed);
