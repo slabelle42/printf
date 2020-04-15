@@ -14,7 +14,9 @@
 
 static int	printf_asterisk(int field, t_flags *flags)
 {
-	if (field < 0)
+	if (field < 0 && flags->dot == 1)
+		field = -1;
+	else if (field < 0)
 	{
 		flags->minus = 1;
 		flags->zero = 0;
@@ -32,6 +34,8 @@ int			printf_width_precision(const char *format, va_list *ap,
 	char	*str_field;
 	int		int_field;
 
+	if (flags->dot == 1)
+		(specs->i)++;
 	if (format[(specs->i)++] == '*')
 		return (printf_asterisk(va_arg(*ap, int), flags));
 	start = --(specs->i);
@@ -40,7 +44,7 @@ int			printf_width_precision(const char *format, va_list *ap,
 	end = specs->i;
 	len = end - start;
 	if (!(str_field = malloc(sizeof(char) * (len + 1))))
-		return (-1);
+		return (-2);
 	str_field[len] = '\0';
 	while (end >= start)
 		str_field[len--] = format[end--];
