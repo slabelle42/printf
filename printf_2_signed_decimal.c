@@ -48,8 +48,13 @@ static int	printf_display_sd(t_flags *flags, t_specifiers *specs, int int_ap,
 		printed += printf_display_width_precision(specs->width, 0, 0);
 	}
 	else
-		printed += printf_display_width_precision(specs->width, ap_len,
-			specs->precision);
+	{
+		if (specs->width && specs->precision == -1 && flags->zero == 0)
+			printed += printf_display_width_precision(specs->width, ap_len, 0);
+		else
+			printed += printf_display_width_precision(specs->width, ap_len,
+				specs->precision);
+	}
 	if (flags->minus == 0)
 		printed += printf_display2_sd(specs, int_ap, str_ap, ap_len);
 	return (printed);
