@@ -59,8 +59,8 @@ static int	printf_display_ud(t_flags *flags, t_specifiers *specs, char *str_ap)
 int			printf_unsigned_decimal(unsigned int uint_ap, t_flags *flags,
 			t_specifiers *specs)
 {
-	int				printed;
-	char			*str_ap;
+	int		printed;
+	char	*str_ap;
 
 	if (uint_ap == 0 && specs->precision == 0)
 		return (printf_display_width_precision(specs->width, 0, 0));
