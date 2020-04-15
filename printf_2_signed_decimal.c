@@ -60,7 +60,8 @@ static int	printf_display_sd(t_flags *flags, t_specifiers *specs, int int_ap,
 	return (printed);
 }
 
-int			printf_signed_decimal(int int_ap, t_flags *flags, t_specifiers *specs)
+int			printf_signed_decimal(int int_ap, t_flags *flags,
+			t_specifiers *specs)
 {
 	int		printed;
 	int		int_cpy;
