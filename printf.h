@@ -50,7 +50,7 @@ int				printf_string(char *str_ap, t_flags *flags,
 					t_specifiers *specs);
 int				printf_unsigned_char(char char_ap, t_flags *flags,
 					t_specifiers *specs);
-int				printf_unsigned_decimal(unsigned int ui_ap, t_flags *flags,
+int				printf_unsigned_decimal(unsigned int uint_ap, t_flags *flags,
 					t_specifiers *specs);
 
 #endif
