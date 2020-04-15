@@ -608,7 +608,7 @@ int		main(void)
 	print_b = ft_printf("ft_printf     : %0*.*u\n", 3, 0, 11);
 	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
 	printf("\n");
-
+*/
 
 	printf("\n[   NO FORMAT _   ]\n\n");
 	
@@ -652,7 +652,7 @@ int		main(void)
 	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
 	printf("\n");
 
-
+/*
 	printf("\n[   MAC DIFF   ]\n\n");
 	
 	print_a =    printf("  : |%i %d %d %d %d %s %c %d %u %x %X|\n", 8, -12, 123456789, 0, -12345678, "abcdefghijklmnop", 'a', 'a', -12, -12, -12);
