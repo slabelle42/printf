@@ -59,15 +59,13 @@ static int	printf_display_ud(t_flags *flags, t_specifiers *specs, char *str_ap)
 int			printf_unsigned_decimal(unsigned int uint_ap, t_flags *flags,
 			t_specifiers *specs)
 {
-	unsigned int	uint_cpy;
 	int				printed;
 	char			*str_ap;
 
-	uint_cpy = (unsigned int)(uint_ap + 4294967295 + 1);
-	if (uint_cpy == 0 && specs->precision == 0)
+	if (uint_ap == 0 && specs->precision == 0)
 		return (printf_display_width_precision(specs->width, 0, 0));
 	printed = 0;
-	str_ap = ft_itoa(uint_cpy);
+	str_ap = ft_itoa(uint_ap);
 	printed += printf_display_ud(flags, specs, str_ap);
 	free(str_ap);
 	return (printed);
