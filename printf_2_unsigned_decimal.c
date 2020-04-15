@@ -27,8 +27,7 @@ static int	printf_display2_ud(t_specifiers *specs, char *str_ap, int ap_len)
 	return (printed);
 }
 
-static int	printf_display_ud(t_flags *flags, t_specifiers *specs,
-			unsigned int uint_ap, char *str_ap)
+static int	printf_display_ud(t_flags *flags, t_specifiers *specs, char *str_ap)
 {
 	int		ap_len;
 	int		printed;
@@ -69,7 +68,7 @@ int			printf_unsigned_decimal(unsigned int uint_ap, t_flags *flags,
 		return (printf_display_width_precision(specs->width, 0, 0));
 	printed = 0;
 	str_ap = ft_itoa(uint_cpy);
-	printed += printf_display_ud(flags, specs, uint_cpy, str_ap);
+	printed += printf_display_ud(flags, specs, str_ap);
 	free(str_ap);
 	return (printed);
 }
