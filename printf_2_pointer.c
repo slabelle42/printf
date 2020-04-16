@@ -32,14 +32,32 @@ static int	printf_display_pt(t_specifiers *specs, char *str_ap, int ap_len)
 	return (printed);
 }
 
+static int	printf_zero_pt(t_specifiers *specs)
+{
+	int		printed;
+
+	printed = 0;
+	if (specs->width >= 0 && specs->flag_minus == 0)
+	{
+		printed += printf_display_width_precision((specs->width - 2), 0, 0);
+		printed += ft_putstr_fd("0x", 1);
+	}
+	else
+	{
+		printed += ft_putstr_fd("0x", 1);
+		printed += printf_display_width_precision((specs->width - 2), 0, 0);
+	}
+	return (printed);
+}
+
 int			printf_pointer(unsigned long long ull_ap, t_specifiers *specs)
 {
 	int		printed;
 	char	*str_ap;
 	int		ap_len;
 
-//	if (ull_ap == 0 && specs->precision == 0)
-//		return ();
+	if (ull_ap == 0 && specs->precision == 0)
+		return (printf_zero_pt(specs));
 	printed = 0;
 	str_ap = ft_itoa_ull_base(ull_ap, 16);
 	ap_len = (int)ft_strlen(str_ap);
