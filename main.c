@@ -669,5 +669,7 @@ int		main(void)
 	printf("\n");
 */
 
+	system("leaks libftprintf");
+
 	return (0);
 }
