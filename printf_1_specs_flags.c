@@ -12,7 +12,7 @@
 
 #include "printf.h"
 
-t_specifiers		*printf_init_specs(void)
+t_specifiers		*printf_init_specifiers(void)
 {
 	t_specifiers	*specs;
 
