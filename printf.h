@@ -33,7 +33,7 @@ int				ft_printf(const char *format, ...);
 
 int				printf_display_width_precision(int field, int minus, int zero);
 void			printf_flags(const char *format, t_specifiers *specs);
-t_specifiers	*printf_init_specs(void);
+t_specifiers	*printf_init_specifiers(void);
 int				printf_width_precision(const char *format, va_list *ap,
 					t_specifiers *specs);
 
