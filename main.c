@@ -654,7 +654,7 @@ int		main(void)
 	print_b = ft_printf("ft_printf     : %k|\n", 0);
 	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
 	printf("\n");
-
+*/
 
 	printf("\n[   MAC DIFF   ]\n\n");
 	
@@ -667,7 +667,12 @@ int		main(void)
 	print_b =    printf("ft: |%u %x %X %u %x %X %u %x %X %u %x %X %u %x %X %u %x %X %u %x %X %u %x %X|\n", 8, 8, 8, -12, -12, -12, 123456789, 123456789, 123456789, 0, 0, 0, -12345678, -12345678, -12345678, 'a', 'a', 'a', 2147483647, 2147483647, 2147483647, -2147483648, -2147483648, -2147483648);
 	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
 	printf("\n");
-*/
+
+	print_a =    printf("   ultimate4 %*.*x %*.*X\n", 1, 50, 5000, 1, 0, 10);
+	print_b = ft_printf("ft ultimate4 %*.*x %*.*X\n", 1, 50, 5000, 1, 0, 10);
+	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
+	printf("\n");
+
 
 	system("leaks libftprintf");
 
