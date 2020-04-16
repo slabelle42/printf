@@ -29,8 +29,7 @@ t_specifiers		*printf_init_specs(void)
 	return (specs);
 }
 
-void				printf_flags(const char *format, t_flags *flags,
-					t_specifiers *specs)
+void				printf_flags(const char *format, t_specifiers *specs)
 {
 	while (++(specs->i) < specs->j
 		&& !(ft_strchr(".123456789*", format[specs->i])))
