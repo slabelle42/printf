@@ -18,6 +18,8 @@ static int			printf_type(va_list *ap, t_specifiers *specs)
 		return (printf_unsigned_char(va_arg(*ap, unsigned int), specs));
 	else if (specs->type == 's')
 		return (printf_string(va_arg(*ap, char *), specs));
+	else if (specs->type == 'p')
+		return (printf_pointer(va_arg(*ap, unsigned long long), specs));
 	else if (specs->type == 'x' || specs->type == 'X')
 		return (printf_unsigned_hexa(va_arg(*ap, unsigned long long), specs));
 	else if (specs->type == 'd' || specs->type == 'i')
