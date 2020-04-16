@@ -24,11 +24,11 @@ static int	printf_display_pt(t_specifiers *specs, char *str_ap, int ap_len)
 	{
 		printed += printf_display_width_precision(specs->precision, ap_len, 1);
 		while (++k < specs->precision)
-			printed += ft_putchar_fd(str_ap[k]);
+			printed += ft_putchar_fd(str_ap[k], 1);
 	}
 	else
 		while (++k < ap_len)
-			printed += ft_putchar_fd(str_ap[k]);
+			printed += ft_putchar_fd(str_ap[k], 1);
 	return (printed);
 }
 
@@ -37,7 +37,6 @@ int			printf_pointer(unsigned long long ull_ap, t_specifiers *specs)
 	int		printed;
 	char	*str_ap;
 	int		ap_len;
-	int		k;
 
 //	if (ull_ap == 0 && specs->precision == 0)
 //		return ();
