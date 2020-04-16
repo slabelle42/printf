@@ -12,15 +12,15 @@
 
 #include "printf.h"
 
-int		printf_percent(t_flags *flags, t_specifiers *specs)
+int		printf_percent(t_specifiers *specs)
 {
 	int	printed;
 
 	printed = 0;
-	if (flags->minus == 1)
+	if (specs->flag_minus == 1)
 		printed += ft_putchar_fd('%', 1);
-	printed += printf_display_width_precision(specs->width, 1, flags->zero);
-	if (flags->minus == 0)
+	printed += printf_display_width_precision(specs->width, 1, specs->flag_zero);
+	if (specs->flag_minus == 0)
 		printed += ft_putchar_fd('%', 1);
 	return (printed);
 }
