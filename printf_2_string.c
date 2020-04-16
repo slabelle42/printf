@@ -21,7 +21,8 @@ static int	printf_display_str(char *str_ap, t_specifiers *specs, int ap_len)
 	k = -1;
 	if (specs->precision >= 0)
 	{
-		printed += printf_display_width_precision(specs->precision, ap_len, 0);
+		printed += printf_display_width_precision(specs->precision, ap_len,
+			specs->flag_zero);
 		while (str_ap[++k] && k < specs->precision)
 			printed += ft_putchar_fd(str_ap[k], 1);
 	}
@@ -46,9 +47,10 @@ int			printf_string(char *str_ap, t_specifiers *specs)
 		printed += printf_display_str(str_ap, specs, ap_len);
 	if (specs->precision >= 0)
 		printed += printf_display_width_precision(specs->width,
-			specs->precision, 0);
+			specs->precision, specs->flag_zero);
 	else
-		printed += printf_display_width_precision(specs->width, ap_len, 0);
+		printed += printf_display_width_precision(specs->width, ap_len,
+			specs->flag_zero);
 	if (specs->flag_minus == 0)
 		printed += printf_display_str(str_ap, specs, ap_len);
 	return (printed);
