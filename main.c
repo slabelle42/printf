@@ -476,15 +476,15 @@ int		main(void)
 	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
 	printf("\n");
 	
-	print_a =    printf("printf     #6 : %#x\n", 6);
-	print_b = ft_printf("ft_printf     : %#x\n", 6);
-	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
-	printf("\n");
+//	print_a =    printf("BONUS printf     #6 : %#x\n", 6);
+//	print_b = ft_printf("      ft_printf     : %#x\n", 6);
+//	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
+//	printf("\n");
 
-	print_a =    printf("printf     #0 : %#x\n", 0);
-	print_b = ft_printf("ft_printf     : %#x\n", 0);
-	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
-	printf("\n");
+//	print_a =    printf("BONUS printf     #0 : %#x\n", 0);
+//	print_b = ft_printf("      ft_printf     : %#x\n", 0);
+//	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
+//	printf("\n");
 
 
 	printf("\n[   UNSIGNED HEXA _X   ]\n\n");
@@ -534,15 +534,15 @@ int		main(void)
 	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
 	printf("\n");
 
-	print_a =    printf("printf     #6 : %#X\n", 6);
-	print_b = ft_printf("ft_printf     : %#X\n", 6);
-	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
-	printf("\n");
+//	print_a =    printf("BONUS printf     #6 : %#X\n", 6);
+//	print_b = ft_printf("      ft_printf     : %#X\n", 6);
+//	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
+//	printf("\n");
 
-	print_a =    printf("printf     #0 : %#X\n", 0);
-	print_b = ft_printf("ft_printf     : %#X\n", 0);
-	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
-	printf("\n");
+//	print_a =    printf("BONUS printf     #0 : %#X\n", 0);
+//	print_b = ft_printf("      ft_printf     : %#X\n", 0);
+//	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
+//	printf("\n");
 
 /*
 	printf("\n[   UNSIGNED HEXA _p   ]\n\n");
