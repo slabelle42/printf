@@ -56,16 +56,16 @@ static int	printf_display_uh(t_specifiers *specs, char *str_ap)
 	return (printed);
 }
 
-int			printf_unsigned_hexa(unsigned long long ull_ap, t_specifiers *specs)
+int			printf_unsigned_hexa(unsigned int uint_ap, t_specifiers *specs)
 {
 	int		printed;
 	char	*str_ap;
 	int		k;
 
-	if (ull_ap == 0 && specs->precision == 0)
+	if (uint_ap == 0 && specs->precision == 0)
 		return (printf_display_width_precision(specs->width, 0, 0));
 	printed = 0;
-	str_ap = ft_itoa_ull_base(ull_ap, 16);
+	str_ap = ft_itoa_ull_base(uint_ap, 16);
 	if (specs->type == 'X')
 	{
 		k = -1;
