@@ -31,8 +31,7 @@ static int	printf_display_str(char *str_ap, t_specifiers *specs, int ap_len)
 	return (printed);
 }
 
-int			printf_string(char *str_ap, t_flags *flags,
-			t_specifiers *specs)
+int			printf_string(char *str_ap, t_specifiers *specs)
 {
 	int		ap_len;
 	int		printed;
@@ -43,14 +42,14 @@ int			printf_string(char *str_ap, t_flags *flags,
 	printed = 0;
 	if (specs->precision >= 0 && specs->precision > ap_len)
 		specs->precision = ap_len;
-	if (flags->minus == 1)
+	if (specs->flag_minus == 1)
 		printed += printf_display_str(str_ap, specs, ap_len);
 	if (specs->precision >= 0)
 		printed += printf_display_width_precision(specs->width,
 			specs->precision, 0);
 	else
 		printed += printf_display_width_precision(specs->width, ap_len, 0);
-	if (flags->minus == 0)
+	if (specs->flag_minus == 0)
 		printed += printf_display_str(str_ap, specs, ap_len);
 	return (printed);
 }
