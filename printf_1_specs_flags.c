@@ -20,10 +20,10 @@ t_specifiers		*printf_init_specs(void)
 		return (NULL);
 	specs->i = 0;
 	specs->j = 0;
-	specs->flag_minus = 0
-	specs->flag_zero = 0
+	specs->flag_minus = 0;
+	specs->flag_zero = 0;
 	specs->width = 0;
-	specs->flag_dot = 0
+	specs->flag_dot = 0;
 	specs->precision = -1;
 	specs->type = ' ';
 	return (specs);
