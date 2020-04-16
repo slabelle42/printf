@@ -14,22 +14,19 @@
 
 static int			printf_type(va_list *ap, t_specifiers *specs)
 {
-	int				printed;
-
-	printed = 0;
 	if (specs->type == 'c')
-		printed = printf_unsigned_char(va_arg(*ap, unsigned int), specs);
+		return (printf_unsigned_char(va_arg(*ap, unsigned int), specs));
 	else if (specs->type == 's')
-		printed = printf_string(va_arg(*ap, char *), specs);
+		return (printf_string(va_arg(*ap, char *), specs));
 	else if (specs->type == 'x' || specs->type == 'X')
-		printed = printf_unsigned_hexa(va_arg(*ap, unsigned long long), specs);
+		return (printf_unsigned_hexa(va_arg(*ap, unsigned long long), specs));
 	else if (specs->type == 'd' || specs->type == 'i')
-		printed = printf_signed_decimal(va_arg(*ap, int), specs);
+		return (printf_signed_decimal(va_arg(*ap, int), specs));
 	else if (specs->type == 'u')
-		printed = printf_unsigned_decimal(va_arg(*ap, unsigned int), specs);
+		return (printf_unsigned_decimal(va_arg(*ap, unsigned int), specs));
 	else if (specs->type == '%')
-		printed = printf_percent(specs);
-	return (printed);
+		return (printf_percent(specs));
+	return (0);
 }
 
 static int			printf_parse(const char *format, va_list *ap,
