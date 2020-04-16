@@ -30,15 +30,14 @@ static int	printf_display2_sd(t_specifiers *specs, int int_ap, char *str_ap,
 	return (printed);
 }
 
-static int	printf_display_sd(t_flags *flags, t_specifiers *specs, int int_ap,
-			char *str_ap)
+static int	printf_display_sd(t_specifiers *specs, int int_ap, char *str_ap)
 {
 	int		ap_len;
 	int		printed;
 
 	ap_len = (int)ft_strlen(str_ap);
 	printed = 0;
-	if (flags->minus == 1)
+	if (specs->flag_minus == 1)
 		printed += printf_display2_sd(specs, int_ap, str_ap, ap_len);
 	if (specs->precision >= 0 && specs->precision < ap_len)
 		specs->precision = ap_len;
@@ -49,19 +48,18 @@ static int	printf_display_sd(t_flags *flags, t_specifiers *specs, int int_ap,
 	}
 	else
 	{
-		if (specs->width && specs->precision == -1 && flags->zero == 0)
+		if (specs->width && specs->precision == -1 && specs->flag_zero == 0)
 			printed += printf_display_width_precision(specs->width, ap_len, 0);
 		else
 			printed += printf_display_width_precision(specs->width, ap_len,
 				specs->precision);
 	}
-	if (flags->minus == 0)
+	if (specs->flag_minus == 0)
 		printed += printf_display2_sd(specs, int_ap, str_ap, ap_len);
 	return (printed);
 }
 
-int			printf_signed_decimal(int int_ap, t_flags *flags,
-			t_specifiers *specs)
+int			printf_signed_decimal(int int_ap, t_specifiers *specs)
 {
 	int		printed;
 	int		int_cpy;
@@ -71,18 +69,18 @@ int			printf_signed_decimal(int int_ap, t_flags *flags,
 		return (printf_display_width_precision(specs->width, 0, 0));
 	printed = 0;
 	int_cpy = int_ap;
-	if (int_ap < 0 && (specs->precision >= 0 || flags->zero == 1)
+	if (int_ap < 0 && (specs->precision >= 0 || specs->flag_zero == 1)
 		&& int_cpy != -2147483648)
 	{
-		if (specs->precision <= -1 && flags->zero == 1)
+		if (specs->precision <= -1 && specs->flag_zero == 1)
 			ft_putchar_fd('-', 1);
 		int_ap = -int_ap;
-		flags->zero = 1;
+		specs->flag_zero = 1;
 		specs->width--;
 		printed++;
 	}
 	str_ap = ft_itoa(int_ap);
-	printed += printf_display_sd(flags, specs, int_cpy, str_ap);
+	printed += printf_display_sd(specs, int_cpy, str_ap);
 	free(str_ap);
 	return (printed);
 }
