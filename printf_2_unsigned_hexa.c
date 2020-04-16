@@ -27,14 +27,14 @@ static int	printf_display2_uh(t_specifiers *specs, char *str_ap, int ap_len)
 	return (printed);
 }
 
-static int	printf_display_uh(t_flags *flags, t_specifiers *specs, char *str_ap)
+static int	printf_display_uh(t_specifiers *specs, char *str_ap)
 {
 	int		ap_len;
 	int		printed;
 
 	ap_len = (int)ft_strlen(str_ap);
 	printed = 0;
-	if (flags->minus == 1)
+	if (specs->flag_minus == 1)
 		printed += printf_display2_uh(specs, str_ap, ap_len);
 	if (specs->precision >= 0 && specs->precision < ap_len)
 		specs->precision = ap_len;
@@ -45,19 +45,18 @@ static int	printf_display_uh(t_flags *flags, t_specifiers *specs, char *str_ap)
 	}
 	else
 	{
-		if (specs->width && specs->precision == -1 && flags->zero == 0)
+		if (specs->width && specs->precision == -1 && specs->flag_zero == 0)
 			printed += printf_display_width_precision(specs->width, ap_len, 0);
 		else
 			printed += printf_display_width_precision(specs->width, ap_len,
 				specs->precision);
 	}
-	if (flags->minus == 0)
+	if (specs->flag_minus == 0)
 		printed += printf_display2_uh(specs, str_ap, ap_len);
 	return (printed);
 }
 
-int			printf_unsigned_hexa(unsigned long long ull_ap, t_flags *flags,
-			t_specifiers *specs)
+int			printf_unsigned_hexa(unsigned long long ull_ap, t_specifiers *specs)
 {
 	int		printed;
 	char	*str_ap;
@@ -73,7 +72,7 @@ int			printf_unsigned_hexa(unsigned long long ull_ap, t_flags *flags,
 		while (str_ap[++k])
 			str_ap[k] = ft_toupper(str_ap[k]);
 	}
-	printed += printf_display_uh(flags, specs, str_ap);
+	printed += printf_display_uh(specs, str_ap);
 	free(str_ap);
 	return (printed);
 }
