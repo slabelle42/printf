@@ -12,6 +12,7 @@ SRC =	ft_printf.c
 SRC +=	printf_1_specs_flags.c
 SRC +=	printf_1_width_precision.c
 SRC +=	printf_2_percent.c
+SRC +=	printf_2_pointer.c
 SRC +=	printf_2_signed_decimal.c
 SRC +=	printf_2_string.c
 SRC +=	printf_2_unsigned_char.c
