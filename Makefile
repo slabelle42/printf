@@ -9,7 +9,7 @@ MAIN = main.c
 
 # [ src ]
 SRC =	ft_printf.c
-SRC +=	printf_1_flags_specs.c
+SRC +=	printf_1_specs_flags.c
 SRC +=	printf_1_width_precision.c
 SRC +=	printf_2_percent.c
 SRC +=	printf_2_signed_decimal.c
