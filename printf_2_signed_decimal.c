@@ -12,6 +12,19 @@
 
 #include "printf.h"
 
+static int	printf_display3_sd(t_specifiers *specs, int ap_len)
+{
+	int		printed;
+
+	printed = 0;
+	if (specs->width && specs->precision == -1 && specs->flag_zero == 0)
+		printed += printf_display_width_precision(specs->width, ap_len, 0);
+	else
+		printed += printf_display_width_precision(specs->width, ap_len,
+			specs->precision);
+	return (printed);
+}
+
 static int	printf_display2_sd(t_specifiers *specs, int int_ap, char *str_ap,
 			int ap_len)
 {
@@ -44,16 +57,11 @@ static int	printf_display_sd(t_specifiers *specs, int int_ap, char *str_ap)
 	if (specs->precision >= 0)
 	{
 		specs->width -= specs->precision;
-		printed += printf_display_width_precision(specs->width, 0, 0);
+		printed += printf_display_width_precision(specs->width, 0,
+			specs->flag_zero);
 	}
 	else
-	{
-		if (specs->width && specs->precision == -1 && specs->flag_zero == 0)
-			printed += printf_display_width_precision(specs->width, ap_len, 0);
-		else
-			printed += printf_display_width_precision(specs->width, ap_len,
-				specs->precision);
-	}
+		printed += printf_display3_sd(specs, ap_len);
 	if (specs->flag_minus == 0)
 		printed += printf_display2_sd(specs, int_ap, str_ap, ap_len);
 	return (printed);
@@ -66,7 +74,8 @@ int			printf_signed_decimal(int int_ap, t_specifiers *specs)
 	char	*str_ap;
 
 	if (int_ap == 0 && specs->precision == 0)
-		return (printf_display_width_precision(specs->width, 0, 0));
+		return (printf_display_width_precision(specs->width, 0,
+			specs->flag_zero));
 	printed = 0;
 	int_cpy = int_ap;
 	if (int_ap < 0 && (specs->precision >= 0 || specs->flag_zero == 1)
