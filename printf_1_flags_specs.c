@@ -12,16 +12,21 @@
 
 #include "printf.h"
 
-t_flags				*printf_init_flags(void)
+t_specifiers		*printf_init_specs(void)
 {
-	t_flags			*flags;
+	t_specifiers	*specs;
 
-	if (!(flags = ft_memalloc(sizeof(t_flags))))
+	if (!(specs = ft_memalloc(sizeof(t_specifiers))))
 		return (NULL);
-	flags->minus = 0;
-	flags->zero = 0;
-	flags->dot = 0;
-	return (flags);
+	specs->i = 0;
+	specs->j = 0;
+	specs->flag_minus = 0
+	specs->flag_zero = 0
+	specs->width = 0;
+	specs->flag_dot = 0
+	specs->precision = -1;
+	specs->type = ' ';
+	return (specs);
 }
 
 void				printf_flags(const char *format, t_flags *flags,
@@ -35,18 +40,4 @@ void				printf_flags(const char *format, t_flags *flags,
 			flags->zero = 1;
 	if (flags->minus == 1)
 		flags->zero = 0;
-}
-
-t_specifiers		*printf_init_specs(void)
-{
-	t_specifiers	*specs;
-
-	if (!(specs = ft_memalloc(sizeof(t_specifiers))))
-		return (NULL);
-	specs->i = 0;
-	specs->j = 0;
-	specs->width = 0;
-	specs->precision = -1;
-	specs->type = ' ';
-	return (specs);
 }
