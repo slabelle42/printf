@@ -17,18 +17,14 @@
 # include <stdarg.h>
 # include <unistd.h>
 
-typedef struct	s_flags
-{
-	int			minus;
-	int			zero;
-	int			dot;
-}				t_flags;
-
 typedef struct	s_specifiers
 {
 	int			i;
 	int			j;
+	int			flag_minus;
+	int			flag_zero;
 	int			width;
+	int			flag_dot;
 	int			precision;
 	char		type;
 }				t_specifiers;
@@ -38,7 +34,6 @@ int				ft_printf(const char *format, ...);
 int				printf_display_width_precision(int field, int minus, int zero);
 void			printf_flags(const char *format, t_flags *flags,
 					t_specifiers *specs);
-t_flags			*printf_init_flags(void);
 t_specifiers	*printf_init_specs(void);
 int				printf_width_precision(const char *format, va_list *ap,
 					t_flags *flags, t_specifiers *specs);
