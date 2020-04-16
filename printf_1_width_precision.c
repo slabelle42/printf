@@ -12,21 +12,21 @@
 
 #include "printf.h"
 
-static int	printf_asterisk(int field, t_flags *flags)
+static int	printf_asterisk(int field, t_specifiers *specs)
 {
-	if (field < 0 && flags->dot == 1)
+	if (field < 0 && specs->flag_dot == 1)
 		field = -1;
 	else if (field < 0)
 	{
-		flags->minus = 1;
-		flags->zero = 0;
+		specs->flag_minus = 1;
+		specs->flags_zero = 0;
 		field = -field;
 	}
 	return (field);
 }
 
 int			printf_width_precision(const char *format, va_list *ap,
-			t_flags *flags, t_specifiers *specs)
+			t_specifiers *specs)
 {
 	int		start;
 	int		end;
@@ -34,10 +34,10 @@ int			printf_width_precision(const char *format, va_list *ap,
 	char	*str_field;
 	int		int_field;
 
-	if (flags->dot == 1)
+	if (specs->flag_dot == 1)
 		(specs->i)++;
 	if (format[(specs->i)++] == '*')
-		return (printf_asterisk(va_arg(*ap, int), flags));
+		return (printf_asterisk(va_arg(*ap, int), specs));
 	start = --(specs->i);
 	while (ft_isdigit(format[specs->i]))
 		(specs->i)++;
