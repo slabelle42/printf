@@ -62,7 +62,7 @@ int			printf_pointer(unsigned int uint_ap, t_specifiers *specs)
 	if (uint_ap == 0 && specs->precision == 0)
 		return (printf_zero_pt(specs));
 	printed = 0;
-	str_ap = ft_itoa_ull_base(uint_ap, 16);
+	str_ap = ft_itoa_ull_base((unsigned long long)uint_ap, 16);
 	ap_len = (int)ft_strlen(str_ap);
 	if (specs->precision < ap_len)
 		specs->precision = ap_len;
