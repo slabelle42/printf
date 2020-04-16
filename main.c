@@ -544,7 +544,7 @@ int		main(void)
 //	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
 //	printf("\n");
 
-/*
+
 	printf("\n[   UNSIGNED HEXA _p   ]\n\n");
 
 	char	*p_val1 = "abc";
@@ -608,7 +608,7 @@ int		main(void)
 	print_b = ft_printf("ft_printf     : %-*p|\n", 8, NULL);
 	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
 	printf("\n");
-*/
+
 
 	printf("\n[   PERCENT __   ]\n\n");
 
