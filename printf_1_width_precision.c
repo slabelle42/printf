@@ -19,7 +19,7 @@ static int	printf_asterisk(int field, t_specifiers *specs)
 	else if (field < 0)
 	{
 		specs->flag_minus = 1;
-		specs->flags_zero = 0;
+		specs->flag_zero = 0;
 		field = -field;
 	}
 	return (field);
