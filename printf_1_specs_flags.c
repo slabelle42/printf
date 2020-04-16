@@ -34,9 +34,9 @@ void				printf_flags(const char *format, t_specifiers *specs)
 	while (++(specs->i) < specs->j
 		&& !(ft_strchr(".123456789*", format[specs->i])))
 		if (format[specs->i] == '-')
-			flags->minus = 1;
+			specs->flag_minus = 1;
 		else if (format[specs->i] == '0')
-			flags->zero = 1;
-	if (flags->minus == 1)
-		flags->zero = 0;
+			specs->flag_zero = 1;
+	if (specs->flag_minus == 1)
+		specs->flag_zero = 0;
 }
