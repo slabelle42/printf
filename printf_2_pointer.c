@@ -22,7 +22,8 @@ static int	printf_display_pt(t_specifiers *specs, char *str_ap, int ap_len)
 	k = -1;
 	if (specs->precision >= 0)
 	{
-		printed += printf_display_width_precision(specs->precision, ap_len, 1);
+		printed += printf_display_width_precision(specs->precision, ap_len,
+			specs->flag_zero);
 		while (++k < specs->precision)
 			printed += ft_putchar_fd(str_ap[k], 1);
 	}
@@ -39,13 +40,15 @@ static int	printf_zero_pt(t_specifiers *specs)
 	printed = 0;
 	if (specs->width >= 0 && specs->flag_minus == 0)
 	{
-		printed += printf_display_width_precision((specs->width - 2), 0, 0);
+		printed += printf_display_width_precision((specs->width - 2), 0,
+			specs->flag_zero);
 		printed += ft_putstr_fd("0x", 1);
 	}
 	else
 	{
 		printed += ft_putstr_fd("0x", 1);
-		printed += printf_display_width_precision((specs->width - 2), 0, 0);
+		printed += printf_display_width_precision((specs->width - 2), 0,
+			specs->flag_zero);
 	}
 	return (printed);
 }
@@ -65,7 +68,8 @@ int			printf_pointer(unsigned long long ull_ap, t_specifiers *specs)
 		specs->precision = ap_len;
 	if (specs->flag_minus == 1)
 		printed += printf_display_pt(specs, str_ap, ap_len);
-	printed += printf_display_width_precision(specs->width, (ap_len + 2), 0);
+	printed += printf_display_width_precision(specs->width, (ap_len + 2),
+		specs->flag_zero);
 	if (specs->flag_minus == 0)
 		printed += printf_display_pt(specs, str_ap, ap_len);
 	free(str_ap);
