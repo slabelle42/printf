@@ -589,11 +589,6 @@ int		main(void)
 	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
 	printf("\n");
 	
-	print_a =    printf("printf  -.* 0 : %-.*p|\n", 8, 0);
-	print_b = ft_printf("ft_printf     : %-.*p|\n", 8, 0);
-	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
-	printf("\n");
-	
 	print_a =    printf("printf  -* ++ : %-*p|\n", 8, 1000);
 	print_b = ft_printf("ft_printf     : %-*p|\n", 8, 1000);
 	(print_a == print_b) ? printf(GRE "[OK]\n" RES) : printf(RED "[KO]\n" RES);
